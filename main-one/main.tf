@@ -12,3 +12,13 @@ resource "aws_vpc" "Lezuha-VPC" {
     name = "Lezuha-VPC"
   }
 }
+resource "aws_subnet" "Public-sub1" {
+  vpc_id     = aws_vpc.Lezuha-VPC.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "Public-sub1"
+  }
+}
+
+
